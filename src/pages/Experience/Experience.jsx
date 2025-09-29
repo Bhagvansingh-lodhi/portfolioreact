@@ -175,7 +175,7 @@ const ExperienceSection = () => {
       description: "Consistently solving algorithmic challenges to enhance problem-solving skills and prepare for technical interviews. Focused on data structures and algorithm optimization.",
       status: "achievement",
       skills: ["Problem Solving", "Algorithms", "Data Structures", "Time Complexity"],
-      achievements: ["250+ Problems Solved", "Daily Practice", "Interview Preparation"]
+      achievements: ["300+ Problems Solved", "Daily Practice", "Interview Preparation"]
     },
     {
       icon: BookOpen,
