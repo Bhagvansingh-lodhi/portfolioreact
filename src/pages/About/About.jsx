@@ -12,9 +12,9 @@ export default function About() {
 
   const stats = [
     { icon: Code2, label: "Projects Completed", value: "10+" },
-    { icon: Award, label: "LeetCode Problems", value: "250+" },
+    { icon: Award, label: "LeetCode Problems", value: "300+" },
     { icon: GraduationCap, label: "Current CGPA", value: "7.6/10" },
-    { icon: Calendar, label: "Experience", value: "2+ Years" }
+    { icon: Calendar, label: "Experience", value: "1+ Years" }
   ];
 
   const interests = [
