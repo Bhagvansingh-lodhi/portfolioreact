@@ -10,12 +10,12 @@ import HeroImg from "@/assets/images/hero.jpg";
 export default function About() {
   const containerRef = useRef(null);
 
-  const stats = [
-    { icon: Code2, label: "Projects Completed", value: "10+" },
-    { icon: Award, label: "LeetCode Problems", value: "300+" },
-    { icon: GraduationCap, label: "Certifications", value: "3 Completed" }
-{ icon: Calendar, label: "Experience", value: "1+ Years" }
-  ];
+const stats = [
+  { icon: Code2, label: "Projects Completed", value: "10+" },
+  { icon: Award, label: "LeetCode Problems", value: "300+" },
+  { icon: GraduationCap, label: "Certifications", value: "3 Completed" }, 
+  { icon: Calendar, label: "Experience", value: "1+ Years" }
+];
 
   const interests = [
     { icon: Rocket, text: "Modern Web Technologies" },
