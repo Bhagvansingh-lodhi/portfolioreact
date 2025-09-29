@@ -52,7 +52,7 @@ export default function Hero() {
 const profile = {
     name: 'Bhagvan Singh Lodhi',
     title: 'Frontend Developer | CS Student | Problem Solver',
-    education: 'B.Tech Computer Science (CGPA: 7.6/10)',
+    education: 'B.Tech Computer Science',
     skills: [
         'React', 'JavaScript', 'HTML5', 'CSS3',
         'Java', 'Data Structures', 'Algorithms', 'OOP',
