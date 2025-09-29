@@ -13,8 +13,8 @@ export default function About() {
   const stats = [
     { icon: Code2, label: "Projects Completed", value: "10+" },
     { icon: Award, label: "LeetCode Problems", value: "300+" },
-    { icon: GraduationCap, label: "Current CGPA", value: "7.6/10" },
-    { icon: Calendar, label: "Experience", value: "1+ Years" }
+    { icon: GraduationCap, label: "Certifications", value: "3 Completed" }
+{ icon: Calendar, label: "Experience", value: "1+ Years" }
   ];
 
   const interests = [
@@ -234,7 +234,7 @@ export default function About() {
                     </div>
                     <div>
                       <div className="font-semibold text-white">Bhagvan Singh Lodhi</div>
-                      <div className="text-sm text-gray-400">B.Tech Computer Science • CGPA: 7.6/10</div>
+                      <div className="text-sm text-gray-400">B.Tech Computer Science</div>
                     </div>
                   </div>
                 </div>
