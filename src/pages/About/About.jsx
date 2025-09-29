@@ -2,26 +2,78 @@ import { motion } from "framer-motion";
 import { useRef } from "react";
 import { 
   Code2, Rocket, Target, GraduationCap, 
-  Award, Users, Sparkles, Quote,
-  Calendar, MapPin, BookOpen, Lightbulb
+  Award, Users, Sparkles, 
+  Calendar, MapPin, Heart, Zap,
+  Eye, Layers, Search, Globe
 } from "lucide-react";
 import HeroImg from "@/assets/images/hero.jpg";
 
 export default function About() {
   const containerRef = useRef(null);
 
-const stats = [
-  { icon: Code2, label: "Projects Completed", value: "10+" },
-  { icon: Award, label: "LeetCode Problems", value: "300+" },
-  { icon: GraduationCap, label: "Certifications", value: "3 Completed" }, 
-  { icon: Calendar, label: "Experience", value: "1+ Years" }
-];
+  const stats = [
+    { icon: Code2, label: "Projects Completed", value: "10+" },
+    { icon: Award, label: "LeetCode Problems", value: "300+" },
+    { icon: Award, label: "Certifications", value: "5+" },
+    { icon: Calendar, label: "Experience", value: "1+ Years" }
+  ];
 
   const interests = [
     { icon: Rocket, text: "Modern Web Technologies" },
     { icon: Target, text: "Problem Solving" },
     { icon: Users, text: "Collaborative Development" },
-    { icon: Lightbulb, text: "Creative Solutions" }
+    { icon: Zap, text: "Creative Solutions" }
+  ];
+
+  const philosophyPrinciples = [
+    {
+      icon: Heart,
+      title: "User-First Design",
+      description: "Build experiences that delight users while solving real problems",
+      color: "from-pink-500 to-rose-500",
+      bgColor: "bg-pink-500/10",
+      borderColor: "border-pink-500/20"
+    },
+    {
+      icon: Code2,
+      title: "Clean Code Philosophy",
+      description: "Write maintainable, readable code that others can understand and build upon",
+      color: "from-blue-500 to-cyan-500",
+      bgColor: "bg-blue-500/10",
+      borderColor: "border-blue-500/20"
+    },
+    {
+      icon: Zap,
+      title: "Performance Matters",
+      description: "Fast, efficient applications provide better user experiences",
+      color: "from-amber-500 to-orange-500",
+      bgColor: "bg-amber-500/10",
+      borderColor: "border-amber-500/20"
+    },
+    {
+      icon: Layers,
+      title: "Progressive Enhancement",
+      description: "Build core functionality first, then enhance with modern features",
+      color: "from-green-500 to-emerald-500",
+      bgColor: "bg-green-500/10",
+      borderColor: "border-green-500/20"
+    },
+    {
+      icon: Search,
+      title: "Problem-Solving Focus",
+      description: "Understand the 'why' before diving into the 'how'",
+      color: "from-purple-500 to-indigo-500",
+      bgColor: "bg-purple-500/10",
+      borderColor: "border-purple-500/20"
+    },
+    {
+      icon: Globe,
+      title: "Accessibility for All",
+      description: "Create inclusive experiences that everyone can use",
+      color: "from-teal-500 to-cyan-500",
+      bgColor: "bg-teal-500/10",
+      borderColor: "border-teal-500/20"
+    }
   ];
 
   return (
@@ -211,33 +263,73 @@ const stats = [
                 ))}
               </div>
 
-              {/* Quote Section */}
+              {/* Developer Philosophy Section */}
               <motion.div
                 initial={{ opacity: 0, y: 20 }}
                 whileInView={{ opacity: 1, y: 0 }}
                 transition={{ duration: 0.6, delay: 0.8 }}
                 viewport={{ once: true }}
-                className="relative"
+                className="space-y-6"
               >
-                <div className="bg-gradient-to-r from-cyan-500/10 to-blue-500/10 border-l-4 border-cyan-400 rounded-2xl p-6">
-                  <Quote className="w-8 h-8 text-cyan-400 mb-4" />
-                  <p className="text-gray-300 italic leading-relaxed">
-                    I'm a dedicated learner currently expanding my skills into backend development 
-                    with Node.js and MongoDB to grow as a full-stack developer. Seeking a remote 
-                    frontend developer internship to contribute to collaborative teams while 
-                    gaining professional experience.
-                  </p>
-                  
-                  <div className="mt-6 flex items-center gap-3">
-                    <div className="w-10 h-10 bg-gradient-to-r from-cyan-500 to-blue-500 rounded-full flex items-center justify-center">
-                      <BookOpen className="w-5 h-5 text-white" />
-                    </div>
-                    <div>
-                      <div className="font-semibold text-white">Bhagvan Singh Lodhi</div>
-                      <div className="text-sm text-gray-400">B.Tech Computer Science</div>
-                    </div>
-                  </div>
+                <div className="flex items-center gap-3">
+                  <div className="w-2 h-8 bg-gradient-to-b from-cyan-400 to-blue-500 rounded-full" />
+                  <h4 className="text-xl font-bold text-white">Development Philosophy</h4>
                 </div>
+                
+                <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
+                  {philosophyPrinciples.map((principle, index) => (
+                    <motion.div
+                      key={principle.title}
+                      initial={{ opacity: 0, scale: 0.9 }}
+                      whileInView={{ opacity: 1, scale: 1 }}
+                      whileHover={{ scale: 1.02, y: -2 }}
+                      transition={{ 
+                        duration: 0.4, 
+                        delay: 0.8 + index * 0.1,
+                        type: "spring",
+                        stiffness: 300
+                      }}
+                      viewport={{ once: true }}
+                      className={`relative p-4 rounded-xl border backdrop-blur-sm ${principle.bgColor} ${principle.borderColor} group cursor-pointer overflow-hidden`}
+                    >
+                      {/* Animated Background Gradient */}
+                      <div className={`absolute inset-0 bg-gradient-to-br ${principle.color} opacity-0 group-hover:opacity-5 transition-opacity duration-500`} />
+                      
+                      {/* Floating Icon */}
+                      <motion.div
+                        className={`mb-3 p-2 rounded-lg bg-gradient-to-r ${principle.color} w-10 h-10 flex items-center justify-center`}
+                        whileHover={{ rotate: [0, -5, 5, 0] }}
+                        transition={{ duration: 0.5 }}
+                      >
+                        <principle.icon className="w-5 h-5 text-white" />
+                      </motion.div>
+                      
+                      {/* Content */}
+                      <h5 className="font-semibold text-white mb-2 text-sm">
+                        {principle.title}
+                      </h5>
+                      <p className="text-xs text-gray-300 leading-relaxed">
+                        {principle.description}
+                      </p>
+                      
+                      {/* Hover Border Effect */}
+                      <div className={`absolute inset-0 rounded-xl bg-gradient-to-r ${principle.color} opacity-0 group-hover:opacity-20 transition-opacity duration-300`} />
+                    </motion.div>
+                  ))}
+                </div>
+
+                {/* Philosophy Summary */}
+                <motion.div
+                  initial={{ opacity: 0, y: 10 }}
+                  whileInView={{ opacity: 1, y: 0 }}
+                  transition={{ duration: 0.5, delay: 1.2 }}
+                  viewport={{ once: true }}
+                  className="text-center pt-4"
+                >
+                  <p className="text-sm text-gray-400 italic">
+                    "Building with purpose, designing with empathy, and coding with clarity"
+                  </p>
+                </motion.div>
               </motion.div>
 
               {/* Interests */}
