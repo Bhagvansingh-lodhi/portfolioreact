@@ -45,7 +45,7 @@ export default function Hero() {
     "Frontend Developer & React Enthusiast",
     "Computer Science Student",
     "Problem Solver & Continuous Learner",
-    "Seeking Frontend Developer Internship",
+    
   ];
 
   const [code] = useState(`
@@ -61,7 +61,7 @@ const profile = {
     hardWorker: true,
     quickLearner: true,
     problemSolver: true,
-    leetCodeProblems: 250,
+    leetCodeProblems: 300,
     hireable: function() {
         return (
             this.hardWorker &&
@@ -226,7 +226,7 @@ const profile = {
               <div className="relative mb-8 sm:mb-12 max-w-xl">
                 <p className="text-base sm:text-xl text-gray-300/90 leading-relaxed">
                   Motivated CS student specializing in React development 🚀 | 
-                  Solved 250+ LeetCode problems 💻 | Passionate about creating 
+                  Solved 300+ LeetCode problems 💻 | Passionate about creating 
                   user-friendly web applications ✨
                 </p>
               </div>
