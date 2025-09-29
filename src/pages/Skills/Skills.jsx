@@ -307,7 +307,7 @@ const SkillsSection = () => {
             {[
               { label: "Technologies", value: "15+", icon: Rocket },
               { label: "Projects", value: "10+", icon: Target },
-              { label: "LeetCode", value: "250+", icon: TrendingUp },
+              { label: "LeetCode", value: "300+", icon: TrendingUp },
               { label: "Experience", value: "1+ Years", icon: Star },
             ].map((stat, index) => (
               <div key={index} className="text-center">
