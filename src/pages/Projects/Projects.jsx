@@ -4,6 +4,7 @@ import { useRef, useEffect, useState } from "react";
 import ecommerceImg from "../../assets/images/ecommerce.jpg";
 import weatherImg from "../../assets/images/weather.jpg";
 import portfolioImg from "../../assets/images/portfolio.jpg";
+import codesenseiImg from "../../assets/images/codesensei.jpg"
 
 
 import PropTypes from "prop-types";
@@ -14,6 +15,36 @@ import {
 } from "lucide-react";
 
 const projects = [
+ {
+    title: "CodeSensei AI – Code Reviewer",
+    description:
+      "CodeSensei AI is an intelligent, developer-friendly tool that reviews your code instantly using AI. It highlights bugs, logic issues, bad patterns, and provides clean fixes and improvement suggestions like a real senior engineer would. Beautiful UI, fast response, and zero setup.",
+    link: codesenseiImg,
+    color: "#f97316",
+    githubLink: "https://github.com/Bhagvansingh-lodhi/sensie"
+    liveLink: "https://codesenseiai.vercel.app/",
+    technologies: [
+      "MongoDB",
+      "Express.js",
+      "React",
+      "Node.js",
+      "Gemini API",
+      "Tailwind CSS"
+    ],
+    category: "Fullstack · AI",
+    status: "Completed",
+    features: [
+      "AI Code Review",
+      "Bug & Issue Highlighting",
+      "Markdown Output",
+      "Beautiful UI",
+      "Instant Feedback"
+    ],
+    duration: "1 month",
+    complexity: "Advanced"
+  },
+
+  
   {
     title: "React E-Commerce Frontend",
     description: "A fully responsive single-page application (SPA) built with React. Implemented state management for shopping cart using Context API and Hooks. Styled components with pure CSS for mobile-friendly user interface.",
