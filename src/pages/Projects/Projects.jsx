@@ -21,7 +21,7 @@ const projects = [
       "CodeSensei AI is an intelligent, developer-friendly tool that reviews your code instantly using AI. It highlights bugs, logic issues, bad patterns, and provides clean fixes and improvement suggestions like a real senior engineer would. Beautiful UI, fast response, and zero setup.",
     link: codesenseiImg,
     color: "#f97316",
-    githubLink: "https://github.com/Bhagvansingh-lodhi/sensie"
+    githubLink: "https://github.com/Bhagvansingh-lodhi/sensie",
     liveLink: "https://codesenseiai.vercel.app/",
     technologies: [
       "MongoDB",
