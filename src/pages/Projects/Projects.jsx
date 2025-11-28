@@ -1,21 +1,53 @@
 import { ReactLenis } from "lenis/react";
-import { useTransform, motion, useScroll, AnimatePresence } from "framer-motion";
+import { useTransform, motion, useScroll } from "framer-motion";
 import { useRef, useEffect, useState } from "react";
 import ecommerceImg from "../../assets/images/ecommerce.jpg";
 import weatherImg from "../../assets/images/weather.jpg";
-import portfolioImg from "../../assets/images/portfolio.jpg";
-import codesenseiImg from "../../assets/images/codesensei.jpg"
+import codesenseiImg from "../../assets/images/codesensei.jpg";
 
+// ✅ NEW: import ClarifyAI image (update path/name/extension as per your project)
+import clarifyImg from "../../assets/images/clarifyai.jpg"; 
+// e.g. "../../assets/images/clarifyai.png" if it's png
 
 import PropTypes from "prop-types";
 import { 
   ExternalLink, Github, ArrowRight, Play, 
-  Code2, Smartphone, Globe, Zap,
-  Sparkles, Target, Clock, Users
-} from "lucide-react";
+  Zap,
+  Sparkles,
+} from "lucide-react"; // you can remove unused icons to clean up
 
 const projects = [
- {
+  {
+    title: "ClarifyAI — Decision Support App",
+    description:
+      "ClarifyAI helps users make smarter decisions by comparing multiple options using AI-generated criteria, pros/cons, and weighted scoring. It provides confidence and risk metrics to recommend the best choice.",
+    link: clarifyImg,
+    color: "#0d9488",
+    githubLink: "https://github.com/Bhagvansingh-lodhi",
+    liveLink: "https://clarifyai1.vercel.app",
+    technologies: [
+      "MongoDB",
+      "Express.js",
+      "React (Vite)",
+      "Node.js",
+      "JWT Auth",
+      "Tailwind CSS",
+      "Groq Llama-3 Model"
+    ],
+    category: "Full Stack",
+    status: "Completed",
+    features: [
+      "AI-Generated Evaluation Criteria",
+      "Pros & Cons Generation",
+      "Weighted Scoring Engine",
+      "Confidence & Risk Metrics",
+      "Secure Authentication",
+      "Responsive Dashboard UI"
+    ],
+    duration: "4 weeks",
+    complexity: "Intermediate-Advanced"
+  },
+  {
     title: "CodeSensei AI – Code Reviewer",
     description:
       "CodeSensei AI is an intelligent, developer-friendly tool that reviews your code instantly using AI. It highlights bugs, logic issues, bad patterns, and provides clean fixes and improvement suggestions like a real senior engineer would. Beautiful UI, fast response, and zero setup.",
@@ -43,50 +75,44 @@ const projects = [
     duration: "1 month",
     complexity: "Advanced"
   },
-
-  
   {
     title: "React E-Commerce Frontend",
-    description: "A fully responsive single-page application (SPA) built with React. Implemented state management for shopping cart using Context API and Hooks. Styled components with pure CSS for mobile-friendly user interface.",
-      link: ecommerceImg,
-  
+    description:
+      "A fully responsive single-page application (SPA) built with React. Implemented state management for shopping cart using Context API and Hooks. Styled components with pure CSS for mobile-friendly user interface.",
+    link: ecommerceImg,
     color: "#5196fd",
     githubLink: "https://github.com/Bhagvansingh-lodhi/shopiixaaa",
     liveLink: "https://shopixa.vercel.app/",
     technologies: ["React", "Context API", "React Hooks", "CSS3", "JavaScript"],
     category: "Frontend",
     status: "Completed",
-    features: ["Shopping Cart", "Product Filtering", "Responsive Design", "State Management"],
+    features: [
+      "Shopping Cart",
+      "Product Filtering",
+      "Responsive Design",
+      "State Management"
+    ],
     duration: "2 months",
     complexity: "Intermediate"
   },
   {
     title: "Weather Application",
-    description: "Interactive weather app fetching real-time data from public API. Built dynamic UI components to render weather data and 5-day forecast. Utilized native JavaScript fetch API for asynchronous data retrieval.",
-    
-    link:weatherImg,
+    description:
+      "Interactive weather app fetching real-time data from public API. Built dynamic UI components to render weather data and 5-day forecast. Utilized native JavaScript fetch API for asynchronous data retrieval.",
+    link: weatherImg,
     color: "#8f89ff",
     githubLink: "https://github.com/Bhagvansingh-lodhi/weatherapp",
     liveLink: "https://jalvaayu.netlify.app/",
     technologies: ["JavaScript", "HTML5", "CSS3", "RESTful APIs"],
     category: "Frontend",
     status: "Completed",
-    features: ["Real-time Data", "5-Day Forecast", "Location Search", "Dynamic UI"],
+    features: [
+      "Real-time Data",
+      "5-Day Forecast",
+      "Location Search",
+      "Dynamic UI"
+    ],
     duration: "1 month",
-    complexity: "Beginner"
-  },
-  {
-    title: "Portfolio Website",
-    description: "Designed and built responsive portfolio from scratch using HTML, CSS, JavaScript. Implemented interactive elements and smooth animations for user engagement.",
-link: portfolioImg,
-    color: "#0d9488",
-    githubLink: "https://github.com/Bhagvansingh-lodhi/portfolio",
-    liveLink: "https://bhagvansinghlodhi.netlify.app/",
-    technologies: ["HTML5", "CSS3", "JavaScript", "Responsive Design"],
-    category: "Frontend",
-    status: "Completed",
-    features: ["Responsive Design", "Smooth Animations", "Modern UI", "Performance Optimized"],
-    duration: "3 weeks",
     complexity: "Beginner"
   }
 ];
@@ -153,7 +179,10 @@ export default function Projects() {
 
   return (
     <ReactLenis root>
-      <main className="bg-gradient-to-br from-[#04081A] via-[#0A0F2C] to-[#1A1F3C] min-h-screen" ref={container}>
+      <main
+        className="bg-gradient-to-br from-[#04081A] via-[#0A0F2C] to-[#1A1F3C] min-h-screen"
+        ref={container}
+      >
         {/* Animated Background */}
         <div className="fixed inset-0 z-0">
           <div className="absolute inset-0 bg-[linear-gradient(rgba(255,255,255,0.03)_1px,transparent_1px),linear-gradient(90deg,rgba(255,255,255,0.03)_1px,transparent_1px)] bg-[size:60px_60px]" />
@@ -171,18 +200,20 @@ export default function Projects() {
           >
             <div className="inline-flex items-center gap-2 px-6 py-3 rounded-full bg-white/5 backdrop-blur-sm border border-white/10 mb-6">
               <Sparkles className="w-5 h-5 text-yellow-400" />
-              <span className="text-sm font-medium text-gray-300">Featured Projects</span>
+              <span className="text-sm font-medium text-gray-300">
+                Featured Projects
+              </span>
             </div>
-            
+
             <h1 className="text-5xl md:text-7xl font-bold mb-6">
               <span className="bg-gradient-to-r from-cyan-400 via-blue-500 to-purple-600 bg-clip-text text-transparent">
                 My Projects
               </span>
             </h1>
-            
+
             <p className="text-gray-300 text-lg leading-relaxed">
-              A collection of projects showcasing my skills in frontend development, 
-              responsive design, and modern web technologies.
+              A collection of projects showcasing my skills in frontend
+              development, responsive design, and modern web technologies.
             </p>
           </motion.div>
         </section>
@@ -224,12 +255,12 @@ export default function Projects() {
               key={i}
               onClick={() => {
                 const element = document.getElementById(`project-${i}`);
-                element?.scrollIntoView({ behavior: 'smooth' });
+                element?.scrollIntoView({ behavior: "smooth" });
               }}
               className={`w-3 h-3 rounded-full transition-all duration-300 ${
-                activeProject === i 
-                  ? 'bg-cyan-400 scale-125 shadow-lg shadow-cyan-400/50' 
-                  : 'bg-white/20 hover:bg-white/40'
+                activeProject === i
+                  ? "bg-cyan-400 scale-125 shadow-lg shadow-cyan-400/50"
+                  : "bg-white/20 hover:bg-white/40"
               }`}
             />
           ))}
@@ -256,7 +287,6 @@ function Card({
   features = [],
   duration,
   complexity,
-  isActive,
   onHover
 }) {
   const container = useRef(null);
@@ -274,8 +304,7 @@ function Card({
         style={{
           scale,
           top: `calc(-5vh + ${i * 25}px)`,
-          transform: `scale(var(--project-scale, 1))`,
-          marginTop: "var(--project-margin, 0)",
+          marginTop: "var(--project-margin, 0)", // CSS var from effect
         }}
         className="relative -top-[25%] h-auto w-[90%] md:w-[85%] lg:w-[75%] xl:w-[65%] origin-top project-card"
         whileHover={{
@@ -283,10 +312,9 @@ function Card({
           transition: { duration: 0.4, type: "spring" },
         }}
       >
-        {/* Enhanced card design with glass morphism */}
+        {/* Card */}
         <div className="w-full flex flex-col lg:flex-row bg-gray-900/80 backdrop-blur-xl rounded-3xl overflow-hidden shadow-2xl border-2 border-white/10 hover:border-white/20 transition-all duration-500">
-          
-          {/* Image section with enhanced effects */}
+          {/* Image section */}
           <div className="w-full lg:w-[55%] h-[300px] lg:h-[500px] relative overflow-hidden group">
             <motion.div
               initial={{ opacity: 0 }}
@@ -303,14 +331,12 @@ function Card({
                 transition={{ duration: 0.8 }}
                 onLoad={() => setIsImageLoaded(true)}
               />
-              
-              {/* Gradient overlay */}
-              <div 
+
+              <div
                 className="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent opacity-60"
                 style={{ mixBlendMode: "multiply" }}
               />
-              
-              {/* Project badge */}
+
               <div className="absolute top-6 left-6 flex gap-2">
                 <span className="px-3 py-1 bg-black/50 backdrop-blur-md text-white rounded-full text-xs font-medium capitalize">
                   {category}
@@ -320,7 +346,6 @@ function Card({
                 </span>
               </div>
 
-              {/* Hover effect */}
               <motion.div
                 className="absolute inset-0 bg-gradient-to-r from-blue-500/20 to-purple-500/20"
                 initial={{ opacity: 0 }}
@@ -329,28 +354,32 @@ function Card({
               />
             </motion.div>
 
-            {/* Loading skeleton */}
             {!isImageLoaded && (
               <div className="absolute inset-0 bg-gradient-to-br from-gray-800 to-gray-900 animate-pulse" />
             )}
           </div>
 
-          {/* Content section with enhanced layout */}
+          {/* Content section */}
           <div className="w-full lg:w-[45%] p-8 lg:p-10 flex flex-col justify-between">
             <div>
-              {/* Project header */}
               <div className="flex items-center justify-between mb-6">
                 <div className="flex items-center gap-3">
-                  <div className="w-3 h-3 rounded-full" style={{ backgroundColor: color }} />
+                  <div
+                    className="w-3 h-3 rounded-full"
+                    style={{ backgroundColor: color }}
+                  />
                   <span className="text-sm text-gray-400">Project {i + 1}</span>
                 </div>
                 <div className="text-right">
-                  <span className="text-xs text-gray-400 block">{duration}</span>
-                  <span className="text-xs text-cyan-400 capitalize">{complexity}</span>
+                  <span className="text-xs text-gray-400 block">
+                    {duration}
+                  </span>
+                  <span className="text-xs text-cyan-400 capitalize">
+                    {complexity}
+                  </span>
                 </div>
               </div>
 
-              {/* Title and description */}
               <h2 className="text-2xl lg:text-3xl font-bold text-white mb-4 leading-tight">
                 {title}
               </h2>
@@ -358,15 +387,19 @@ function Card({
                 {description}
               </p>
 
-              {/* Features */}
               <div className="mb-6">
-                <div className="flex items-center gap-2 mb-3">
+                <div className="flex items-centered gap-2 mb-3">
                   <Zap className="w-4 h-4 text-yellow-400" />
-                  <span className="text-sm font-semibold text-white">Key Features</span>
+                  <span className="text-sm font-semibold text-white">
+                    Key Features
+                  </span>
                 </div>
                 <div className="grid grid-cols-2 gap-2">
                   {features.slice(0, 4).map((feature, index) => (
-                    <div key={index} className="flex items-center gap-2 text-xs text-gray-400">
+                    <div
+                      key={index}
+                      className="flex items-center gap-2 text-xs text-gray-400"
+                    >
                       <div className="w-1.5 h-1.5 bg-blue-500 rounded-full" />
                       {feature}
                     </div>
@@ -374,7 +407,6 @@ function Card({
                 </div>
               </div>
 
-              {/* Technologies */}
               <div className="flex flex-wrap gap-2 mb-6">
                 {technologies.map((tech, index) => (
                   <span
@@ -387,7 +419,6 @@ function Card({
               </div>
             </div>
 
-            {/* Action buttons */}
             <div className="border-t border-white/10 pt-6">
               <div className="flex items-center gap-4">
                 <motion.a
@@ -408,9 +439,9 @@ function Card({
                   target="_blank"
                   rel="noopener noreferrer"
                   className="flex items-center gap-3 px-6 py-3 rounded-xl text-white transition-all duration-300 group flex-1 justify-center"
-                  style={{ 
+                  style={{
                     background: `linear-gradient(135deg, ${color}20, ${color}40)`,
-                    border: `1px solid ${color}30`
+                    border: `1px solid ${color}30`,
                   }}
                   whileHover={{ scale: 1.05 }}
                   whileTap={{ scale: 0.95 }}
@@ -445,6 +476,5 @@ Card.propTypes = {
   features: PropTypes.array,
   duration: PropTypes.string,
   complexity: PropTypes.string,
-  isActive: PropTypes.bool,
   onHover: PropTypes.func,
 };
