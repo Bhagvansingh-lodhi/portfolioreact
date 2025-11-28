@@ -6,7 +6,7 @@ import weatherImg from "../../assets/images/weather.jpg";
 import codesenseiImg from "../../assets/images/codesensei.jpg";
 
 // ✅ NEW: import ClarifyAI image (update path/name/extension as per your project)
-import clarifyImg from "../../assets/images/clarifyai.jpg"; 
+import clarifyImg from "../../assets/images/clarifyai.png"; 
 // e.g. "../../assets/images/clarifyai.png" if it's png
 
 import PropTypes from "prop-types";
