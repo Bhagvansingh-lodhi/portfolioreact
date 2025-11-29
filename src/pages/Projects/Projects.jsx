@@ -4,6 +4,7 @@ import { useRef, useEffect, useState } from "react";
 import ecommerceImg from "../../assets/images/ecommerce.jpg";
 import weatherImg from "../../assets/images/weather.jpg";
 import codesenseiImg from "../../assets/images/codesensei.jpg";
+import studyArchitectImg from "../../assets/images/studyarchitect.png";
 
 // ✅ NEW: import ClarifyAI image (update path/name/extension as per your project)
 import clarifyImg from "../../assets/images/clarifyai.png"; 
@@ -17,6 +18,37 @@ import {
 } from "lucide-react"; // you can remove unused icons to clean up
 
 const projects = [
+  {
+  title: "StudyArchitect - AI Based Learning Platform",
+  description:
+    "An AI-powered MERN application that generates complete study content from any topic. Users can generate structured notes, flashcards, MCQs, and revision plans powered by Gemini AI. Includes user authentication, progress tracking, quizzes, and spaced revision workflows.",
+  link: studyArchitectImg, // replace when ready
+  color: "#6C5CE7",
+  githubLink: "https://github.com/Bhagvansingh-lodhi/studyarchitect",
+  liveLink: "https://studyarchitect.vercel.app/", // update when deployed
+  technologies: [
+    "React",
+    "Node.js",
+    "MongoDB",
+    "Express.js",
+    "TailwindCSS",
+    "JWT Auth",
+    "Gemini AI"
+  ],
+  category: "Full-Stack",
+  status: "Completed",
+  features: [
+    "AI-Based Topic Generation",
+    "Flashcards System",
+    "MCQ Quiz with Scoring",
+    "Progress Tracking",
+    "7-Day Revision Plan",
+    "Authentication System"
+  ],
+  duration: "3 months",
+  complexity: "Advanced"
+},
+
   {
     title: "ClarifyAI — Decision Support App",
     description:
