@@ -75,7 +75,7 @@ const profile = {
   // Function to handle resume download
   const handleDownloadResume = () => {
     // Replace with your actual resume file path
-    const resumeUrl = '/resume.pdf'; // Update this path to your actual resume file
+    const resumeUrl = '/Bhagvan_Singh_Lodhi_Resume.pdf'; // Update this path to your actual resume file
     
     // Create a temporary anchor element to trigger download
     const link = document.createElement('a');
